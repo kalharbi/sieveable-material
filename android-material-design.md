@@ -97,8 +97,46 @@
   <a name="fab-screenshot"></a><a name="fab-screenshot"></a>
   - [**Screenshot**:](#fab-screenshot)
   
+  ![FAB](images/fab.png)
+  
   <a name="fab-code-example"></a><a name="fab-code-example"></a>
   - [**Code Examples**:](#fab-code-example)
+  
+  The FAB can be created using an ImageButton view and giving it a special __background__ image (Oval shape) and setting its __elevation__ to a desired depth.
+   
+   ```xml
+<ImageButton
+    android:layout_width="56dp"
+    android:layout_height="56dp"
+    android:layout_margin="20dp"
+    android:background="@drawable/oval_ripple_shape"
+    android:src="@drawable/fab_plus"
+    android:elevation="6dp"
+    android:stateListAnimator="@anim/fab_raise"/>
+   ```
+   drawable/oval\_ripple\_shape.xml
+   
+   ```xml
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="?attr/colorAccent"/>
+</shape>
+   ```
+   OR
+   
+   ```xml
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+        android:color="?android:colorControlHighlight"
+        android:shape="oval">
+  <item>
+    <shape android:shape="oval">
+      <solid android:color="?android:colorAccent"/>
+    </shape>
+  </item>
+</ripple>
+   ```
+ 
+ 
 
 **[:top: back to top](#table-of-contents)**
 
