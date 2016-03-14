@@ -7,7 +7,7 @@
   1. [Picker](#picker)
   1. [Nav Drawer](#nav-drawer)
   1. [Right Drawer](#right-drawer)
-  1. [Modal Bottom Sheet](#modal-bottom-sheet)
+  1. [Bottom Sheet](#bottom-sheet)
   1. [Floating Action Button (FAB)](#floating-action-button-fab)
   1. [Sub Menu](#sub-menu)
   1. [Menu](#menu)
@@ -176,17 +176,22 @@ myTimePicker.show(getSupportFragmentManager(), "time-picker-tag");
   - [**Screenshot**:](#modal-bottom-sheet-screenshot)
   
   ![Bottom sheet - Google Photos](images/bottom-sheets-1.png)
+  
   Modal Bottom Sheet.
+  
   ![Bottom sheet - Google Maps](images/bottom-sheets-2.png)
+  
   Persistent Bottom Sheet.
   
   <a name="modal-bottom-sheet-code-example"></a><a name="modal-bottom-sheet-code-example"></a>
   - [**Code Examples**:](#modal-bottom-sheet-code-example)
   Bottoms sheets can be implemented using the Design Support Library.
-  + Modal Bottom Sheet:
+  
+  + Using the Design Support Library 
+    + Modal Bottom Sheet:
   Use the `android.support.design.widget.BottomSheetDialogFragment` class.
   
-  + Persistent Bottom Sheet.
+    + Persistent Bottom Sheet.
   Use the `android.support.design.widget.BottomSheetBehavior`
   
   For a sample app using the design support library, see [BottomSheetSample](https://github.com/NikolaDespotoski/BottomSheetSample)
@@ -194,30 +199,30 @@ myTimePicker.show(getSupportFragmentManager(), "time-picker-tag");
   + Using 3rd party libraries:
     + [Bottomsheet by Flipboard]()
    
-    ```xml
-    <com.flipboard.bottomsheet.BottomSheetLayout>
-       ...
-    </com.flipboard.bottomsheet.BottomSheetLayout>   
-    ```
+      ```xml
+      <com.flipboard.bottomsheet.BottomSheetLayout>
+         ...
+      </com.flipboard.bottomsheet.BottomSheetLayout>   
+      ```
     
     + [BottomSheet by soarcn]()
 
-    ```java
-    import com.cocosw.bottomsheet.BottomSheet;
+      ```java
+      import com.cocosw.bottomsheet.BottomSheet;
     
-    new BottomSheet.Builder(this).title("title")
-                   .sheet(R.menu.list)
-                   .listener(new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        switch (which) {
-                            case R.id.help:
-                                q.toast("Help me!");
-                                break;
-                        }
-                    }
-                }).show();
-    ```
+      new BottomSheet.Builder(this).title("title")
+                     .sheet(R.menu.list)
+                     .listener(new DialogInterface.OnClickListener() {
+                      @Override
+                      public void onClick(DialogInterface dialog, int which) {
+                          switch (which) {
+                              case R.id.help:
+                                  q.toast("Help me!");
+                                  break;
+                          }
+                      }
+                  }).show();
+      ```
 
 **[:top: back to top](#table-of-contents)**
 
