@@ -17,7 +17,7 @@
   1. [Snackbar](#snackbar)
   1. [App Bar](#app-bar)
   1. [Toolbar](#toolbar)
-  1. [Refresh Indicator](#refresh-indicator-for-swipe-to-refresh)
+  1. [Refresh Indicator](#refresh-indicator-for-swipe-to-refreshpulldown-to-refresh)
   1. [Search Bar / Quick Entry](#search-bar--quick-entry)
   1. [Switch](#switch)
   1. [References](#references)
@@ -29,12 +29,52 @@
   
   <a name="dialog-description"></a><a name="dialog-description"></a>
   - [**Description**:](#dialog-description)
+  A dialogs is small window that communicates additional information to the user and requires the user to take action (e.g., accept or cancel).
+    Android features a number of different dialogs that are subclasses of the base class _android.app.Dialog_: _AlertDialog, AppCompatDialog, CharacterPickerDialog, MediaRouteChooserDialog, Presentation, AlertDialog, MediaRouteControllerDialog,_ and _ProgressDialog_.
   
+  + AlertDialog: A dialog that shows a title, up to three buttons, a list of selectable items, or a custom layout.
   <a name="dialog-screenshot"></a><a name="dialog-screenshot"></a>
   - [**Screenshot**:](#dialog-screenshot)
   
   <a name="dialog-code-example"></a><a name="dialog-code-example"></a>
   - [**Code Examples**:](#dialog-code-example)
+  
+  + Alert Dialog
+  
+  ```java
+  public class MyAlertDialogFragment extends DialogFragment {
+    @Override
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
+        // 1. Instantiate an AlertDialog.Builder with its constructor
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        // 2. Chain setter methods to set various regions and characteristics
+        builder.setMessage(R.string.dialog_message)
+               .setPositiveButton(R.string.ok_text, new DialogInterface.OnClickListener() {
+                   public void onClick(DialogInterface dialog, int id) {
+                       // Do the OK action here
+                   }
+               })
+               .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                   public void onClick(DialogInterface dialog, int id) {
+                       // User cancelled the dialog
+                   }
+               });
+        // 3. Create the AlertDialog object and return it
+        return builder.create();
+    }
+}
+...
+...
+// 4. show the dialog
+DialogFragment myAlertDialog = new MyAlertDialogFragment();
+myAlertDialog.show(getSupportFragmentManager(), "alert-tag");
+
+  ```
+
+  - **External Links**
+    - [Design guide](https://www.google.com/design/spec/components/dialogs.html)
+    - [Developer guide](http://developer.android.com/guide/topics/ui/dialogs.html)
+    - [API reference](http://developer.android.com/reference/android/app/Dialog.html)
 
 **[:top: back to top](#table-of-contents)**
   
@@ -43,12 +83,47 @@
 
   <a name="picker-description"></a><a name="picker-description"></a>
   - [**Description**:](#picker-description)
+  A picker is essentially a dialog that allows the user to select a value from a pre-determined set of values. There are two types of Pickers: Date pickers and Time pickers:
+  
+   + DatePickerDialog: A dialog that shows a UI that allows the user to select a date.
+   + TimePickerDialog: A dialog that shows a UI that allows the user to select a time.
   
   <a name="picker-screenshot"></a><a name="picker-screenshot"></a>
   - [**Screenshot**:](#picker-screenshot)
   
   <a name="picker-code-example"></a><a name="picker-code-example"></a>
-  - [**Code Examples**:](#picker-code-example)
+  - [**Code Example**:](#picker-code-example)
+  
+  ```java
+  public static class MyTimePickerFragment extends DialogFragment
+                            implements TimePickerDialog.OnTimeSetListener {
+    @Override
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
+        // 1. Use the current time as the default values for the picker
+        final Calendar c = Calendar.getInstance();
+        int hour = c.get(Calendar.HOUR_OF_DAY);
+        int minute = c.get(Calendar.MINUTE);
+
+        // 2. Create a new instance of TimePickerDialog and return it
+        return new TimePickerDialog(getActivity(), this, hour, minute,
+                DateFormat.is24HourFormat(getActivity()));
+    }
+
+    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+        // 3. Do something with the time chosen by the user
+    }
+...
+// 4. Show the dialog
+DialogFragment myTimePicker = new MyTimePickerFragment();
+myTimePicker.show(getSupportFragmentManager(), "time-picker-tag");
+}
+```
+
+  
+  - **External Links**
+    - [Design guide](https://www.google.com/design/spec/components/pickers.html)
+    - [Developer guide](http://developer.android.com/guide/topics/ui/controls/pickers.html)
+    - [API reference](http://developer.android.com/guide/topics/ui/controls/pickers.html)
 
 **[:top: back to top](#table-of-contents)**
 
@@ -91,16 +166,58 @@
 
 **[:top: back to top](#table-of-contents)**
 
-## Modal Bottom Sheet
+## Bottom Sheet
 
   <a name="modal-bottom-sheet-description"></a><a name="modal-bottom-sheet-description"></a>
   - [**Description**:](#modal-bottom-sheet-description)
+  A bottom sheet is a sheet of paper that the user can slide up from the bottom of the screen to reveal more information. There are two types of bottom sheets: Modal and Persistent. Modal Bottom Sheet is an alternative to Dialogs and usually sets at a higher elevation than the app content to show content with additional links. Persistent Bottom Sheet presents additional app content and usually rests at the same elevation as the app content.
   
   <a name="modal-bottom-sheet-screenshot"></a><a name="modal-bottom-sheet-screenshot"></a>
   - [**Screenshot**:](#modal-bottom-sheet-screenshot)
   
+  ![Bottom sheet - Google Photos](images/bottom-sheets-1.png)
+  Modal Bottom Sheet.
+  ![Bottom sheet - Google Maps](images/bottom-sheets-2.png)
+  Persistent Bottom Sheet.
+  
   <a name="modal-bottom-sheet-code-example"></a><a name="modal-bottom-sheet-code-example"></a>
   - [**Code Examples**:](#modal-bottom-sheet-code-example)
+  Bottoms sheets can be implemented using the Design Support Library.
+  + Modal Bottom Sheet:
+  Use the `android.support.design.widget.BottomSheetDialogFragment` class.
+  
+  + Persistent Bottom Sheet.
+  Use the `android.support.design.widget.BottomSheetBehavior`
+  
+  For a sample app using the design support library, see [BottomSheetSample](https://github.com/NikolaDespotoski/BottomSheetSample)
+
+  + Using 3rd party libraries:
+    + [Bottomsheet by Flipboard]()
+   
+    ```xml
+    <com.flipboard.bottomsheet.BottomSheetLayout>
+       ...
+    </com.flipboard.bottomsheet.BottomSheetLayout>   
+    ```
+    
+    + [BottomSheet by soarcn]()
+
+    ```java
+    import com.cocosw.bottomsheet.BottomSheet;
+    
+    new BottomSheet.Builder(this).title("title")
+                   .sheet(R.menu.list)
+                   .listener(new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch (which) {
+                            case R.id.help:
+                                q.toast("Help me!");
+                                break;
+                        }
+                    }
+                }).show();
+    ```
 
 **[:top: back to top](#table-of-contents)**
 
@@ -119,7 +236,7 @@
   
   The FAB can be created using an ImageButton view and giving it a special __background__ image (Oval shape) and setting its __elevation__ to a desired depth.
   
-  - **OPTION 1**: Creating FAB from scratch with custom drawable.
+  + **OPTION 1**: Creating FAB from scratch with custom drawable.
    
    ```xml
 <ImageButton
@@ -153,21 +270,21 @@
 </ripple>
    ```
    
- - **OPTION 2**: Using The Design Support Library.
+ + **OPTION 2**: Using The Design Support Library.
  
  ```xml
  <android.support.design.widget.FloatingActionButton
    ... />
  ```
  
- - **OPTION 3**: Using third party libraries.
-   - [FloatingActionButton By makovkastar](https://github.com/makovkastar/FloatingActionButton)
+ + **OPTION 3**: Using third party libraries.
+   + [FloatingActionButton By makovkastar](https://github.com/makovkastar/FloatingActionButton)
  
   ```xml
    <com.melnykov.fab.FloatingActionButton
     .... />
    ```
-   - [android-floating-action-button By futuresimple](https://github.com/futuresimple/android-floating-action-button)
+   + [android-floating-action-button By futuresimple](https://github.com/futuresimple/android-floating-action-button)
   
   ```xml
   <com.getbase.floatingactionbutton.FloatingActionButton
