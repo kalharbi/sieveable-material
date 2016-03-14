@@ -188,11 +188,8 @@ myTimePicker.show(getSupportFragmentManager(), "time-picker-tag");
   Bottoms sheets can be implemented using the Design Support Library.
   
   + Using the Design Support Library 
-    + Modal Bottom Sheet:
-  Use the `android.support.design.widget.BottomSheetDialogFragment` class.
-  
-    + Persistent Bottom Sheet.
-  Use the `android.support.design.widget.BottomSheetBehavior`
+    + Modal Bottom Sheet: Use the `android.support.design.widget.BottomSheetDialogFragment` class.
+    + Persistent Bottom Sheet. Use the `android.support.design.widget.BottomSheetBehavior`
   
   For a sample app using the design support library, see [BottomSheetSample](https://github.com/NikolaDespotoski/BottomSheetSample)
 
