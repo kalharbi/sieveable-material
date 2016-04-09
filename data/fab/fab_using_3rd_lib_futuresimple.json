@@ -1100,4 +1100,4 @@
 {"app":{"id":"wallpaper.autumn-1","packageName":"wallpaper.autumn","version":"1"},"listing":{"returnAttributes":{"releasedOn":"December 23, 2015","downloads":10}},"ui":{},"manifest":{}},
 {"app":{"id":"wallpaper.jesus-1","packageName":"wallpaper.jesus","version":"1"},"listing":{"returnAttributes":{"releasedOn":"January 8, 2016","downloads":100}},"ui":{},"manifest":{}},
 {"app":{"id":"www.kdict.net-29","packageName":"www.kdict.net","version":"29"},"listing":{"returnAttributes":{"releasedOn":"December 29, 2015","downloads":50000}},"ui":{},"manifest":{}},
-{"app":{"id":"travel.line.hotels-17","packageName":"travel.line.hotels","version":"17"},"listing":{"returnAttributes":{"releasedOn":"October 30, 2015","downloads":5000}},"ui":{},"manifest":{}},
+{"app":{"id":"travel.line.hotels-17","packageName":"travel.line.hotels","version":"17"},"listing":{"returnAttributes":{"releasedOn":"October 30, 2015","downloads":5000}},"ui":{},"manifest":{}}]

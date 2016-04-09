@@ -1557,4 +1557,4 @@
 {"app":{"id":"yoanna.pennystocks-10","packageName":"yoanna.pennystocks","version":"10"},"listing":{"returnAttributes":{"releasedOn":"August 16, 2015","downloads":5000}},"ui":{},"manifest":{}},
 {"app":{"id":"yoanna.forex-10","packageName":"yoanna.forex","version":"10"},"listing":{"returnAttributes":{"releasedOn":"October 13, 2015","downloads":1000}},"ui":{},"manifest":{}},
 {"app":{"id":"yoanna.schizophrenia-10","packageName":"yoanna.schizophrenia","version":"10"},"listing":{"returnAttributes":{"releasedOn":"October 21, 2015","downloads":100}},"ui":{},"manifest":{}},
-{"app":{"id":"de.apptitan.mobileapi.w067r1-41","packageName":"de.apptitan.mobileapi.w067r1","version":"41"},"listing":{"returnAttributes":{"releasedOn":"March 5, 2015","downloads":50}},"ui":{},"manifest":{}},
+{"app":{"id":"de.apptitan.mobileapi.w067r1-41","packageName":"de.apptitan.mobileapi.w067r1","version":"41"},"listing":{"returnAttributes":{"releasedOn":"March 5, 2015","downloads":50}},"ui":{},"manifest":{}}]
