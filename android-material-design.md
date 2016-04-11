@@ -2,6 +2,7 @@
 *A list of Android Material Design Components and how apps can use them.*
 ## Table of Contents
 
+  1. [What is Material Design?](#what-is-material-design)
   1. [Material Design Components](#material-design-components)
   1. [Dialog](#dialog)
   1. [Picker](#picker)
@@ -21,6 +22,9 @@
   1. [Search Bar / Quick Entry](#search-bar--quick-entry)
   1. [Switch](#switch)
   1. [References](#references)
+
+## What is Material Design?
+> Material design is a comprehensive design language and guidelines developed by Google that makes use of elements from print design, responsive transitions, and depth effects.
 
 ## Material Design Components
 
@@ -185,7 +189,7 @@ myTimePicker.show(getSupportFragmentManager(), "time-picker-tag");
   
   <a name="modal-bottom-sheet-code-example"></a><a name="modal-bottom-sheet-code-example"></a>
   - [**Code Examples**:](#modal-bottom-sheet-code-example)
-  Bottoms sheets can be implemented using the Design Support Library.
+  Bottoms sheets can be implemented using the Design Support Library or a third-party library.
   
   + Using the Design Support Library 
     + Modal Bottom Sheet: Use the `android.support.design.widget.BottomSheetDialogFragment` class.
@@ -293,7 +297,15 @@ myTimePicker.show(getSupportFragmentManager(), "time-picker-tag");
      ..../>
   ``` 
  
-  
+  <a name="fab-code-example"></a><a name="fab-code-example"></a>
+  - [**Sieveable Queries**:](#fab-sieveable)
+
+ ```shell
+ http GET 'http://localhost:3000/q?queryText=MATCH app WHERE \
+ <android.support.design.widget.FloatingActionButton/> \
+ <date-published>(*)</date-published> \
+ RETURN app, l$1 as releasedOn'
+ ``` 
 
 **[:top: back to top](#table-of-contents)**
 
