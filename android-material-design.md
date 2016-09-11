@@ -6,7 +6,7 @@
   1. [Material Design Components](#material-design-components)
   1. [Dialog](#dialog)
   1. [Picker](#picker)
-  1. [Navigation Drawer](#nav-drawer)
+  1. [Navigation Drawer](#navigation-drawer)
   1. [Bottom Navigation](#bottom-navigation)
   1. [Bottom Sheet](#bottom-sheet)
   1. [Floating Action Button (FAB)](#floating-action-button-fab)
@@ -138,7 +138,8 @@ myTimePicker.show(getSupportFragmentManager(), "time-picker-tag");
   
   <a name="nav-drawer-screenshot"></a><a name="nav-drawer-screenshot"></a>
   - [**Screenshot**:](#nav-drawer-screenshot)
-    ![Navigation Drawer - Player FM](images/navdrawer.png)
+  
+  ![Navigation Drawer - Player FM](images/navdrawer.png)
     
   <a name="nav-drawer-code-example"></a><a name="nav-drawer-code-example"></a>
   - [**Code Examples**:](#nav-drawer-code-example)
@@ -178,12 +179,14 @@ myTimePicker.show(getSupportFragmentManager(), "time-picker-tag");
   
   <a name="bottom-navigation-screenshot"></a><a name="bottom-navigation-screenshot"></a>
   - [**Screenshot**:](#bottom-navigation-screenshot)
-    ![Bottom Navigation - Canopy](images/bottom-nav.png)
+    
+  ![Bottom Navigation - Canopy](images/bottom-nav.png)
+  
   <a name="bottom-navigation-code-example"></a><a name="bottom-navigation-code-example"></a>
   - [**Code Examples**:](#bottom-navigation-code-example)
   
   ```xml
-  <!-- The bottom of the layout-->
+  <!-- At the bottom of the layout-->
   <FrameLayout>
      <LinearLayout>
        <ImageButton/>
@@ -219,6 +222,13 @@ myTimePicker.show(getSupportFragmentManager(), "time-picker-tag");
   + Using the Design Support Library 
     + Modal Bottom Sheet: Use the `android.support.design.widget.BottomSheetDialogFragment` class.
     + Persistent Bottom Sheet. Use the `android.support.design.widget.BottomSheetBehavior`
+  
+ ```xml
+ <android.support.design.widget.CoordinatorLayout>
+   <FrameLayout 
+     app:layout_behavior="android.support.design.widget.BottomSheetBehavior" />
+ </android.support.design.widget.CoordinatorLayout>
+ ```
   
   For a sample app using the design support library, see [BottomSheetSample](https://github.com/NikolaDespotoski/BottomSheetSample)
 
