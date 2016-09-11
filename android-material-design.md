@@ -75,7 +75,7 @@ myAlertDialog.show(getSupportFragmentManager(), "alert-tag");
 
   ```
 
-  - **External Links**
+  - **References**
     - [Design guide](https://www.google.com/design/spec/components/dialogs.html)
     - [Developer guide](http://developer.android.com/guide/topics/ui/dialogs.html)
     - [API reference](http://developer.android.com/reference/android/app/Dialog.html)
@@ -124,17 +124,17 @@ myTimePicker.show(getSupportFragmentManager(), "time-picker-tag");
 ```
 
   
-  - **External Links**
+  - **References**
     - [Design guide](https://www.google.com/design/spec/components/pickers.html)
     - [Developer guide](http://developer.android.com/guide/topics/ui/controls/pickers.html)
     - [API reference](http://developer.android.com/guide/topics/ui/controls/pickers.html)
 
 **[:top: back to top](#table-of-contents)**
 
-## Nav Drawer
+## Navigation Drawer
 
   <a name="nav-drawer-description"></a><a name="nav-drawer-description"></a>
-  - [**Description**:](#nav-drawer-description)
+  - [**Description**:](#nav-drawer-description) The navigation drawer is a panel that slides from the left to the right of the screen to display the app's main navigation options.
   
   <a name="nav-drawer-screenshot"></a><a name="nav-drawer-screenshot"></a>
   - [**Screenshot**:](#nav-drawer-screenshot)
@@ -142,18 +142,31 @@ myTimePicker.show(getSupportFragmentManager(), "time-picker-tag");
   <a name="nav-drawer-code-example"></a><a name="nav-drawer-code-example"></a>
   - [**Code Examples**:](#nav-drawer-code-example)
   
+   - Using the DrawerLayout widget.
+  
+  ```xml
+  <android.support.v4.widget.DrawerLayout>
+      <!-- The main content view (It can be any view container) -->
+      <FrameLayout/>
+      <!-- The navigation drawer view -->
+      <ListView />
+  <android.support.v4.widget.DrawerLayout>
+  ```
+  
   - Using the Android Design Support Library.
   
   ```xml
-<android.support.design.widget.NavigationView
-    android:id="@+id/nav_view"
-    android:layout_height="match_parent"
-    android:layout_width="wrap_content"
-    android:layout_gravity="start"
-    android:fitsSystemWindows="true"
-    app:headerLayout="@layout/nav_header"
-    app:menu="@menu/drawer_view"/>
+  <android.support.v4.widget.DrawerLayout>
+    <!-- The main content view (It can be any view container) -->
+      <FrameLayout/>
+    <!-- The navigation drawer view -->
+    <android.support.design.widget.NavigationView
+        app:menu="@menu/drawer_view"/>
+  </android.support.v4.widget.DrawerLayout>
   ```
+  - **References**
+    - [Design guide](https://material.google.com/patterns/navigation-drawer.html)
+    - [Developer guide](https://developer.android.com/training/implementing-navigation/nav-drawer.html)
 
 **[:top: back to top](#table-of-contents)**
 
