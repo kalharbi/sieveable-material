@@ -1,13 +1,13 @@
 # Android Material Design Component
-*A list of Android Material Design Components and how apps can use them.*
+*A list of Android Material Design Components and how they can be used.*
 ## Table of Contents
 
   1. [What is Material Design?](#what-is-material-design)
   1. [Material Design Components](#material-design-components)
   1. [Dialog](#dialog)
   1. [Picker](#picker)
-  1. [Nav Drawer](#nav-drawer)
-  1. [Right Drawer](#right-drawer)
+  1. [Navigation Drawer](#nav-drawer)
+  1. [Bottom Navigation](#bottom-navigation)
   1. [Bottom Sheet](#bottom-sheet)
   1. [Floating Action Button (FAB)](#floating-action-button-fab)
   1. [Sub Menu](#sub-menu)
@@ -138,7 +138,8 @@ myTimePicker.show(getSupportFragmentManager(), "time-picker-tag");
   
   <a name="nav-drawer-screenshot"></a><a name="nav-drawer-screenshot"></a>
   - [**Screenshot**:](#nav-drawer-screenshot)
-  
+    ![Navigation Drawer - Player FM](images/navdrawer.png)
+    
   <a name="nav-drawer-code-example"></a><a name="nav-drawer-code-example"></a>
   - [**Code Examples**:](#nav-drawer-code-example)
   
@@ -170,16 +171,27 @@ myTimePicker.show(getSupportFragmentManager(), "time-picker-tag");
 
 **[:top: back to top](#table-of-contents)**
 
-## Right Drawer
+## Bottom Navigation
 
-  <a name="right-drawer-description"></a><a name="right-drawer-description"></a>
-  - [**Description**:](#right-drawer-description)
+  <a name="bottom-navigation-description"></a><a name="bottom-navigation-description"></a>
+  - [**Description**:](#bottom-navigation-description) A navigation bar that appears at the bottom of the screen. It may contain three to five navigation icons to the main navigation destinations in the app.
   
-  <a name="right-drawer-screenshot"></a><a name="right-drawer-screenshot"></a>
-  - [**Screenshot**:](#right-drawer-screenshot)
+  <a name="bottom-navigation-screenshot"></a><a name="bottom-navigation-screenshot"></a>
+  - [**Screenshot**:](#bottom-navigation-screenshot)
+    ![Bottom Navigation - Canopy](images/bottom-nav.png)
+  <a name="bottom-navigation-code-example"></a><a name="bottom-navigation-code-example"></a>
+  - [**Code Examples**:](#bottom-navigation-code-example)
   
-  <a name="right-drawer-code-example"></a><a name="right-drawer-code-example"></a>
-  - [**Code Examples**:](#right-drawer-code-example)
+  ```xml
+  <!-- The bottom of the layout-->
+  <FrameLayout>
+     <LinearLayout>
+       <ImageButton/>
+       <ImageButton/>
+       <ImageButton/>
+     </LinearLayout>
+  </FrameLayout>
+  ```
 
 **[:top: back to top](#table-of-contents)**
 
