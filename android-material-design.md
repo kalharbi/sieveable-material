@@ -331,16 +331,27 @@ myTimePicker.show(getSupportFragmentManager(), "time-picker-tag");
   <com.getbase.floatingactionbutton.FloatingActionButton
      ..../>
   ``` 
+   + [fab By shell-software](https://github.com/shell-software/fab)
+  
+  ```xml
+  <com.software.shell.fab.ActionButton
+     ..../>
+  ``` 
  
   <a name="fab-code-example"></a><a name="fab-code-example"></a>
-  - [**Sieveable Queries**:](#fab-sieveable)
+  - [**Sieveable Query Example**:](#fab-sieveable)
 
- ```shell
- http GET 'http://localhost:3000/q?queryText=MATCH app WHERE \
- <android.support.design.widget.FloatingActionButton/> \
- <date-published>(*)</date-published> \
- RETURN app, l$1 as releasedOn'
- ``` 
+	 - Using the Design Support Library
+
+		```xml
+			MATCH app
+			WHERE
+			  <android.support.design.widget.FloatingActionButton />
+			  <date-published>(*)</date-published>
+  			  <rating>(*)</rating>
+			  <downloads>(*)</downloads>
+			RETURN app, l$1 AS rDate, l$2 as rating, l$3 as downloads
+		```
 
 **[:top: back to top](#table-of-contents)**
 
